@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="gravity"
+    android:textDirection="rtl"
+    tools:context=".main.MainTodoApp">
+
+    <TextView
+        android:id="@+id/titleRV"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#670DC3"
+        android:contextClickable="false"
+        android:gravity="left|center_vertical"
+        android:hint="TodoList"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleRV" />
+
+    <!-- Layout horizontal contenant EditText, Spinner et Button -->
+    <LinearLayout
+        android:id="@+id/layout_horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enterTextET"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1"
+            android:hint="Entrez du texte" />
+
+        <Spinner
+            android:id="@+id/listCategSpin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.3" />
+
+        <Button
+            android:id="@+id/addTaskB"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_constraintEnd_toEndOf="parent"
+            android:layout_weight="0.6"
+            android:text="+" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/setDoneTaskB"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:minHeight="48dp"
+        android:text="tache faite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_horizontal" />
+
+    <Button
+        android:id="@+id/addNewCategB"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:minHeight="48dp"
+        android:text="nouvelle categorie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/setDoneTaskB" />
+
+
+    <Button
+        android:id="@+id/removeCategB"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:minHeight="48dp"
+        android:text="suppr une catégorie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addNewCategB"
+        app:layout_marginHorizontal="8dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
